@@ -3,7 +3,7 @@ function AuthHeader() {
 		<>
 			<div className="flex justify-between items-center">
 				<div className="w-full text-right">
-					<h2 className="text-left text-slate-800 text-lg uppercase leading-tight font-bold">
+					<h2 className="text-left text-slate-800 text-2xl uppercase leading-tight font-bold">
 						Unlock special offers & be the first to shop new
 						arrivals!
 					</h2>

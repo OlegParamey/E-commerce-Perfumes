@@ -4,7 +4,11 @@ import IconLinks from "./Links/IconLinks.jsx";
 function Header() {
 	return (
 		<>
-			<nav className="bg-white text-neutral-900 p-2 flex justify-between border-b-10 border-double sm:p-4">
+			<nav
+				className="bg-white text-neutral-900 p-2 min-h-20
+			flex flex-row justify-evenly gap-5 items-center
+			border-b-8 sm:p-3 sm:justify-between"
+			>
 				<TextLinks />
 				<IconLinks />
 			</nav>
