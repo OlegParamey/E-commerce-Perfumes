@@ -4,9 +4,9 @@ import Footer from "./layouts/Footer.jsx";
 
 function App() {
 	return (
-		<div>
+		<div className="flex flex-col ">
 			<Header />
-			<main className="w-full h-screen bg-slate-100">
+			<main className="w-full min-h-screen bg-white z-10">
 				<AppRoutes />
 			</main>
 			<Footer />

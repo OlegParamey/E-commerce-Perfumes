@@ -7,7 +7,7 @@ function Header() {
 			<nav
 				className="bg-white text-neutral-900 p-2 min-h-20
 			flex flex-row justify-evenly gap-5 items-center
-			border-b-8 sm:p-3 sm:justify-between"
+			border-b-8 sm:p-3 sm:justify-between z-100"
 			>
 				<TextLinks />
 				<IconLinks />

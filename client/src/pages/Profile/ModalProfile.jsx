@@ -4,7 +4,7 @@ import SignInOptions from "./ModalComponents/SignInOptions.jsx";
 import AuthHeader from "./ModalComponents/AuthHeader.jsx";
 import CheckBox from "../../components/UI/CheckBox.jsx";
 import CloseBtn from "../../components/UI/CloseBtn.jsx";
-import ContinueBtn from "../../components/UI/ContinueBtn.jsx";
+import ButtonWithTextAndAction from "../../components/UI/ButtonWithTextAndAction.jsx";
 import Input from "../../components/UI/Input.jsx";
 
 function ModalProfile({ onClose }) {
@@ -35,7 +35,7 @@ function ModalProfile({ onClose }) {
 				<SignInOptions />
 				<Input focus inputName="EMAIL ADDRESS" isRequired={true} />
 				<CheckBox text="Keep me logged in. Applies to all options." />
-				<ContinueBtn />
+				<ButtonWithTextAndAction text="continue" />
 				<AdditionalSignInInfo />
 			</div>
 		</div>

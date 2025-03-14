@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import NotFound from "../pages/NotFound";
-import Products from "../pages/Products";
+import Products from "../pages/Products/Products";
 import Contacts from "../pages/Contacts";
 import Profile from "../pages/Profile/Profile";
 import About from "../pages/About";
 import Cart from "../pages/Cart";
-import Home from "../pages/Home";
+import Home from "../pages/Home/Home";
 
 const AppRoutes = () => {
 	return (
