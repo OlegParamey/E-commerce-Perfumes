@@ -214,8 +214,15 @@ const perfumes = [
 	},
 ];
 
-const allProducts = perfumes.flatMap((item) =>
-	item.productInfo.map((option) => ({ ...item, ...option }))
-);
+const allProducts = perfumes.flatMap((item) => {
+	const { img, title, brand, id } = item;
+	return item.productInfo.map((option) => ({
+		img,
+		title,
+		brand,
+		id,
+		...option,
+	}));
+});
 
 export default allProducts;

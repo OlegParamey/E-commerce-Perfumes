@@ -1,38 +1,53 @@
-import { useSearchParams, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { useEffect, useMemo, useState } from "react";
+import { getProductsData } from "../../fetch/products";
+import removePageFromQueryString from "../../utils/removePageFromQueryString";
 import TopNav from "./TopNav/TopNav";
 import ProductsList from "./ProductsMain/ProductsList";
 import PageNav from "../../components/UI/Menu/PageNav";
-import allProducts from "../../data/perfumes";
+import URL from "../../data/URL";
 
 function Products() {
 	const [searchParams, setSearchParams] = useSearchParams();
-	const [visibleProducts, setVisibleProducts] = useState(null);
-	const navigate = useNavigate();
-	const currentPage = Number(searchParams.get("page")) || 1;
-	const itemsPerPage = 20;
+	const [products, setProducts] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [errorMsg, setErrorMsg] = useState();
+	const [productsForPage, setProductsForPage] = useState([]);
+
+	const queryStringWithoutPage = useMemo(
+		() => removePageFromQueryString(searchParams),
+		[searchParams]
+	);
 
 	useEffect(() => {
-		if (!searchParams.get("page")) {
-			navigate("?page=1", { replace: true });
-		}
-	}, [searchParams, navigate]);
-
-	useEffect(() => {
-		const startIndex = (currentPage - 1) * itemsPerPage;
-		const endIndex = startIndex + itemsPerPage;
-		setVisibleProducts(allProducts.slice(startIndex, endIndex));
-	}, [currentPage, itemsPerPage]);
+		const fetchData = async () => {
+			setLoading(true);
+			try {
+				const data = await getProductsData(URL, queryStringWithoutPage);
+				setProducts(data);
+			} catch (error) {
+				setErrorMsg(error.message);
+			} finally {
+				setLoading(false);
+			}
+		};
+		fetchData();
+	}, [queryStringWithoutPage]);
 
 	return (
 		<div className="relative my-1 w-full h-full flex flex-col justify-between">
 			<TopNav />
-			<ProductsList visibleProducts={visibleProducts} />
+			<ProductsList
+				productsForPage={productsForPage}
+				loading={loading}
+				errorMsg={errorMsg}
+			/>
 			<PageNav
-				currentPage={currentPage}
-				totalItems={allProducts.length}
-				itemsPerPage={itemsPerPage}
+				products={products}
+				totalItems={products.length}
+				searchParams={searchParams}
 				setSearchParams={setSearchParams}
+				setProductsForPage={setProductsForPage}
 			/>
 		</div>
 	);
