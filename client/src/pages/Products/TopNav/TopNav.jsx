@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import { getFilterData } from "../../../fetch/filter";
 import FilterIconBtn from "./FilterIconBtn";
-import ButtonWithTextAndAction from "../../../components/UI/ButtonWithTextAndAction";
 import SearchString from "./SearchString";
-import SideBarFilterMenu from "../Filter/SideBarFilterMenu";
+import SideBarFilterSortMenu from "../FilterSort/SideBarFilterSortMenu";
 import URL from "../../../data/URL";
 
 function TopNav() {
-	const [searchValue, setSearchValue] = useState("");
 	const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
 	const [filterData, setFilterData] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -18,7 +16,10 @@ function TopNav() {
 			setLoading(true);
 			try {
 				const data = await getFilterData(URL);
-				setFilterData(data);
+				setFilterData({
+					...data,
+					capacity: data.capacity.map((el) => el.toString()),
+				});
 			} catch (error) {
 				setErrorMsg(error.message);
 			} finally {
@@ -28,25 +29,23 @@ function TopNav() {
 		fetchData();
 	}, []);
 
-	function handleSubmitSearch(e) {
-		e.preventDefault();
-		if (searchValue.length !== 0) {
-			console.log(searchValue);
-		}
-	}
+	useEffect(() => {
+		const shouldLockScroll = isFilterMenuOpen;
+		document.body.classList.toggle("overflow-hidden", shouldLockScroll);
+		return () => document.body.classList.remove("overflow-hidden");
+	}, [isFilterMenuOpen]);
 
 	return (
 		<>
-			<form
-				onSubmit={(e) => handleSubmitSearch(e)}
-				className=" bg-neutral-100 flex flex-row items-center shadow-md gap-x-2 p-2 sm:py-3 sm:px-3.5 sm:gap-x-4"
+			<div
+				className=" bg-neutral-100 flex flex-row items-center shadow-md 
+				gap-x-2 p-2 sm:py-3 sm:px-3.5 sm:gap-x-4"
 			>
 				<FilterIconBtn onOpen={() => setIsFilterMenuOpen(true)} />
-				<SearchString value={searchValue} setValue={setSearchValue} />
-				<ButtonWithTextAndAction text="Search" w="w-20" />
-			</form>
+				<SearchString />
+			</div>
 			{isFilterMenuOpen && (
-				<SideBarFilterMenu
+				<SideBarFilterSortMenu
 					onClose={() => setIsFilterMenuOpen(false)}
 					filterData={filterData}
 					loading={loading}

@@ -9,7 +9,7 @@ module.exports = function filterByQueryParams(perfumes, queryParams) {
 
 	const normalizeQueryValue = (value) => {
 		if (Array.isArray(value)) {
-			return value.filter((v) => v !== ""); // Убираем пустые строки
+			return value.filter((v) => v !== "");
 		} else if (value !== undefined && value !== null && value !== "") {
 			return [value];
 		}

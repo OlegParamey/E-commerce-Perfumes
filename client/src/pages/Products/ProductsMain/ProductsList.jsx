@@ -25,8 +25,9 @@ function ProductCard({ item }) {
 
 	return (
 		<div
-			className="flex flex-col flex-grow justify-between items-center 
-		p-2 text-center text-sm shadow-lg bg-zinc-100/50 border-2 border-zinc-200/50"
+			className="flex flex-col flex-grow justify-between items-center cursor-pointer
+		p-2 text-center text-sm shadow-lg bg-zinc-100/50 border-2 border-zinc-200/50
+		duration-100 ease-in-out hover:scale-102 hover:border-zinc-200 active:scale-99"
 		>
 			<img src={img} alt={brand} className="max-w-50 max-h-50 border" />
 			<h1 className="font-semibold text-base">{title}</h1>

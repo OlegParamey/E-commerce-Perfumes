@@ -1,6 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { getProductsData } from "../../fetch/products";
+import { useDebounce } from "../../hooks/useDebounce";
 import removePageFromQueryString from "../../utils/removePageFromQueryString";
 import TopNav from "./TopNav/TopNav";
 import ProductsList from "./ProductsMain/ProductsList";
@@ -14,9 +15,8 @@ function Products() {
 	const [errorMsg, setErrorMsg] = useState();
 	const [productsForPage, setProductsForPage] = useState([]);
 
-	const queryStringWithoutPage = useMemo(
-		() => removePageFromQueryString(searchParams),
-		[searchParams]
+	const queryStringWithoutPage = useDebounce(
+		useMemo(() => removePageFromQueryString(searchParams), [searchParams])
 	);
 
 	useEffect(() => {

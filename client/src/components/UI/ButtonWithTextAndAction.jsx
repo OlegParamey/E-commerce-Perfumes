@@ -4,6 +4,7 @@ function ButtonWithTextAndAction({
 	w = "w-32",
 	h = "h-10",
 	disabled = false,
+	type = "button",
 }) {
 	return (
 		<div
@@ -15,6 +16,7 @@ function ButtonWithTextAndAction({
 				className="sm:px-5 py-2 tracking-wider uppercase"
 				onClick={onClick}
 				disabled={disabled}
+				type={type}
 			>
 				{text}
 			</button>
