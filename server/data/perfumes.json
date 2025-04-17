@@ -8,7 +8,8 @@
 			{ "capacity": "50", "price": "479.99" },
 			{ "capacity": "100", "price": "649.99" },
 			{ "capacity": "150", "price": "809.99" }
-		]
+		],
+		"description": "An elegant, sophisticated fragrance with rich notes of iris, amber, and cocoa. DIOR HOMME INTENSE is created for the confident man who values classic luxury. Perfect for evening occasions and special events."
 	},
 	{
 		"img": "/img/1mil.png",
@@ -19,7 +20,8 @@
 			{ "capacity": "50", "price": "525.99" },
 			{ "capacity": "100", "price": "675.99" },
 			{ "capacity": "200", "price": "939.99" }
-		]
+		],
+		"description": "A luxurious and seductive fragrance combining vibrant notes of apple, Damask rose, and patchouli. 1 MILLION ELIXIR is a new, more concentrated embodiment of the iconic scent for men who seek to be the center of attention."
 	},
 	{
 		"img": "/img/armani.png",
@@ -29,7 +31,8 @@
 		"productInfo": [
 			{ "capacity": "50", "price": "525.99" },
 			{ "capacity": "100", "price": "675.99" }
-		]
+		],
+		"description": "An intense and sensual fragrance with warm notes of chestnut, vanilla, and elemi resin. STRONGER WITH YOU ABSOLUTELY embodies modern masculinity and passion, perfect for the confident and charismatic man."
 	},
 	{
 		"img": "/img/JP.png",
@@ -39,7 +42,8 @@
 		"productInfo": [
 			{ "capacity": "75", "price": "525.99" },
 			{ "capacity": "125", "price": "689.99" }
-		]
+		],
+		"description": "A provocative and daring fragrance, opening with fresh notes of coconut and bergamot, smoothly transitioning to a heart of sage and violet. LA BEAU LE PARFUM finishes with a sensual trail of vanilla and sandalwood, embodying contemporary sexuality."
 	},
 	{
 		"img": "/img/prada.png",
@@ -50,7 +54,8 @@
 			{ "capacity": "50", "price": "429.99" },
 			{ "capacity": "100", "price": "595.99" },
 			{ "capacity": "150", "price": "719.99" }
-		]
+		],
+		"description": "A modern and dynamic fragrance, combining the freshness of lavender and bergamot with metallic notes and earthy vetiver. LUNA ROSSA CARBON is the embodiment of strength and innovative spirit for active and determined men."
 	},
 	{
 		"img": "/img/TF.png",
@@ -61,7 +66,8 @@
 			{ "capacity": "30", "price": "765.99" },
 			{ "capacity": "50", "price": "1229.99" },
 			{ "capacity": "100", "price": "1659.99" }
-		]
+		],
+		"description": "A luxurious oriental fragrance with rich notes of tobacco, vanilla, cocoa, and spices. TOBACCO VANILLE creates an atmosphere of exquisite comfort and timeless elegance, ideal for connoisseurs of unique and memorable scents."
 	},
 	{
 		"img": "/img/DiorHI.png",
@@ -72,7 +78,8 @@
 			{ "capacity": "50", "price": "479.99" },
 			{ "capacity": "100", "price": "649.99" },
 			{ "capacity": "150", "price": "809.99" }
-		]
+		],
+		"description": "An elegant, sophisticated fragrance with rich notes of iris, amber, and cocoa. DIOR HOMME INTENSE is created for the confident man who values classic luxury. Perfect for evening occasions and special events."
 	},
 	{
 		"img": "/img/1mil.png",
@@ -83,7 +90,8 @@
 			{ "capacity": "50", "price": "525.99" },
 			{ "capacity": "100", "price": "675.99" },
 			{ "capacity": "200", "price": "939.99" }
-		]
+		],
+		"description": "A luxurious and seductive fragrance combining vibrant notes of apple, Damask rose, and patchouli. 1 MILLION ELIXIR is a new, more concentrated embodiment of the iconic scent for men who seek to be the center of attention."
 	},
 	{
 		"img": "/img/armani.png",
@@ -93,7 +101,8 @@
 		"productInfo": [
 			{ "capacity": "50", "price": "525.99" },
 			{ "capacity": "100", "price": "675.99" }
-		]
+		],
+		"description": "An intense and sensual fragrance with warm notes of chestnut, vanilla, and elemi resin. STRONGER WITH YOU ABSOLUTELY embodies modern masculinity and passion, perfect for the confident and charismatic man."
 	},
 	{
 		"img": "/img/JP.png",
@@ -103,7 +112,8 @@
 		"productInfo": [
 			{ "capacity": "75", "price": "525.99" },
 			{ "capacity": "125", "price": "689.99" }
-		]
+		],
+		"description": "A provocative and daring fragrance, opening with fresh notes of coconut and bergamot, smoothly transitioning to a heart of sage and violet. LA BEAU LE PARFUM finishes with a sensual trail of vanilla and sandalwood, embodying contemporary sexuality."
 	},
 	{
 		"img": "/img/prada.png",
@@ -114,7 +124,8 @@
 			{ "capacity": "50", "price": "429.99" },
 			{ "capacity": "100", "price": "595.99" },
 			{ "capacity": "150", "price": "719.99" }
-		]
+		],
+		"description": "A modern and dynamic fragrance, combining the freshness of lavender and bergamot with metallic notes and earthy vetiver. LUNA ROSSA CARBON is the embodiment of strength and innovative spirit for active and determined men."
 	},
 	{
 		"img": "/img/TF.png",
@@ -125,7 +136,8 @@
 			{ "capacity": "30", "price": "765.99" },
 			{ "capacity": "50", "price": "1229.99" },
 			{ "capacity": "100", "price": "1659.99" }
-		]
+		],
+		"description": "A luxurious oriental fragrance with rich notes of tobacco, vanilla, cocoa, and spices. TOBACCO VANILLE creates an atmosphere of exquisite comfort and timeless elegance, ideal for connoisseurs of unique and memorable scents."
 	},
 	{
 		"img": "/img/DiorHI.png",
@@ -136,7 +148,8 @@
 			{ "capacity": "50", "price": "479.99" },
 			{ "capacity": "100", "price": "649.99" },
 			{ "capacity": "150", "price": "809.99" }
-		]
+		],
+		"description": "An elegant, sophisticated fragrance with rich notes of iris, amber, and cocoa. DIOR HOMME INTENSE is created for the confident man who values classic luxury. Perfect for evening occasions and special events."
 	},
 	{
 		"img": "/img/1mil.png",
@@ -147,7 +160,8 @@
 			{ "capacity": "50", "price": "525.99" },
 			{ "capacity": "100", "price": "675.99" },
 			{ "capacity": "200", "price": "939.99" }
-		]
+		],
+		"description": "A luxurious and seductive fragrance combining vibrant notes of apple, Damask rose, and patchouli. 1 MILLION ELIXIR is a new, more concentrated embodiment of the iconic scent for men who seek to be the center of attention."
 	},
 	{
 		"img": "/img/armani.png",
@@ -157,7 +171,8 @@
 		"productInfo": [
 			{ "capacity": "50", "price": "525.99" },
 			{ "capacity": "100", "price": "675.99" }
-		]
+		],
+		"description": "An intense and sensual fragrance with warm notes of chestnut, vanilla, and elemi resin. STRONGER WITH YOU ABSOLUTELY embodies modern masculinity and passion, perfect for the confident and charismatic man."
 	},
 	{
 		"img": "/img/JP.png",
@@ -167,7 +182,8 @@
 		"productInfo": [
 			{ "capacity": "75", "price": "525.99" },
 			{ "capacity": "125", "price": "689.99" }
-		]
+		],
+		"description": "A provocative and daring fragrance, opening with fresh notes of coconut and bergamot, smoothly transitioning to a heart of sage and violet. LA BEAU LE PARFUM finishes with a sensual trail of vanilla and sandalwood, embodying contemporary sexuality."
 	},
 	{
 		"img": "/img/prada.png",
@@ -178,7 +194,8 @@
 			{ "capacity": "50", "price": "429.99" },
 			{ "capacity": "100", "price": "595.99" },
 			{ "capacity": "150", "price": "719.99" }
-		]
+		],
+		"description": "A modern and dynamic fragrance, combining the freshness of lavender and bergamot with metallic notes and earthy vetiver. LUNA ROSSA CARBON is the embodiment of strength and innovative spirit for active and determined men."
 	},
 	{
 		"img": "/img/TF.png",
@@ -189,7 +206,8 @@
 			{ "capacity": "30", "price": "765.99" },
 			{ "capacity": "50", "price": "1229.99" },
 			{ "capacity": "100", "price": "1659.99" }
-		]
+		],
+		"description": "A luxurious oriental fragrance with rich notes of tobacco, vanilla, cocoa, and spices. TOBACCO VANILLE creates an atmosphere of exquisite comfort and timeless elegance, ideal for connoisseurs of unique and memorable scents."
 	},
 	{
 		"img": "/img/prada.png",
@@ -200,7 +218,8 @@
 			{ "capacity": "50", "price": "429.99" },
 			{ "capacity": "100", "price": "595.99" },
 			{ "capacity": "150", "price": "719.99" }
-		]
+		],
+		"description": "A modern and dynamic fragrance, combining the freshness of lavender and bergamot with metallic notes and earthy vetiver. LUNA ROSSA CARBON is the embodiment of strength and innovative spirit for active and determined men."
 	},
 	{
 		"img": "/img/armani.png",
@@ -210,6 +229,7 @@
 		"productInfo": [
 			{ "capacity": "50", "price": "525.99" },
 			{ "capacity": "100", "price": "675.99" }
-		]
+		],
+		"description": "An intense and sensual fragrance with warm notes of chestnut, vanilla, and elemi resin. STRONGER WITH YOU ABSOLUTELY embodies modern masculinity and passion, perfect for the confident and charismatic man."
 	}
 ]

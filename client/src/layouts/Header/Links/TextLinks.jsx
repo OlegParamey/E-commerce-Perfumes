@@ -10,7 +10,7 @@ function TextLinks({ isSmClass = false, extraLinks = false }) {
 			} overflow-auto`}
 		>
 			<TextLinkContainer to="" end={true} text="Home" />
-			<TextLinkContainer to="products" text="Products" />
+			<TextLinkContainer to="products?page=1" text="Products" />
 			<TextLinkContainer to="about" text="About" />
 			<TextLinkContainer to="contacts" text="Contacts" />
 			{extraLinks && <TextLinkContainer to="cart" text="Cart" />}

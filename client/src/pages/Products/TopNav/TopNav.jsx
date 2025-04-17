@@ -13,7 +13,6 @@ function TopNav() {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			setLoading(true);
 			try {
 				const data = await getFilterData(URL);
 				setFilterData({

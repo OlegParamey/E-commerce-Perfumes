@@ -1,6 +1,6 @@
 export async function getProductsData(URL, query = "") {
 	try {
-		const response = await fetch(`${URL}/perfumes?${query}`);
+		const response = await fetch(`${URL}/products?${query}`);
 		if (response.ok) {
 			const data = response.json();
 			return data;

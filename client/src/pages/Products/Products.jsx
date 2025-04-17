@@ -1,7 +1,6 @@
 import { useSearchParams } from "react-router-dom";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { getProductsData } from "../../fetch/products";
-import { useDebounce } from "../../hooks/useDebounce";
 import removePageFromQueryString from "../../utils/removePageFromQueryString";
 import TopNav from "./TopNav/TopNav";
 import ProductsList from "./ProductsMain/ProductsList";
@@ -9,21 +8,23 @@ import PageNav from "../../components/UI/Menu/PageNav";
 import URL from "../../data/URL";
 
 function Products() {
-	const [searchParams, setSearchParams] = useSearchParams();
+	const [searchParams] = useSearchParams();
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [errorMsg, setErrorMsg] = useState();
 	const [productsForPage, setProductsForPage] = useState([]);
 
-	const queryStringWithoutPage = useDebounce(
-		useMemo(() => removePageFromQueryString(searchParams), [searchParams])
-	);
+	const currentPage = Number(searchParams.get("page")) || 1;
+	const itemsPerPage = 20;
+	const startIndex = (currentPage - 1) * itemsPerPage;
 
 	useEffect(() => {
 		const fetchData = async () => {
-			setLoading(true);
 			try {
-				const data = await getProductsData(URL, queryStringWithoutPage);
+				const data = await getProductsData(
+					URL,
+					removePageFromQueryString(searchParams)
+				);
 				setProducts(data);
 			} catch (error) {
 				setErrorMsg(error.message);
@@ -31,24 +32,32 @@ function Products() {
 				setLoading(false);
 			}
 		};
-		fetchData();
-	}, [queryStringWithoutPage]);
+		if (products.length <= 0) {
+			fetchData();
+		}
+		if (products.length > 0) {
+			setProductsForPage(
+				products.slice(startIndex, startIndex + itemsPerPage)
+			);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [products.length, currentPage, searchParams.toString()]);
 
 	return (
-		<div className="relative my-1 w-full h-full flex flex-col justify-between">
+		<div className="relative my-0 w-full h-full flex flex-col justify-between">
 			<TopNav />
 			<ProductsList
 				productsForPage={productsForPage}
 				loading={loading}
 				errorMsg={errorMsg}
 			/>
-			<PageNav
-				products={products}
-				totalItems={products.length}
-				searchParams={searchParams}
-				setSearchParams={setSearchParams}
-				setProductsForPage={setProductsForPage}
-			/>
+			{!loading && (
+				<PageNav
+					totalItems={products.length}
+					itemsPerPage={itemsPerPage}
+					currentPage={currentPage}
+				/>
+			)}
 		</div>
 	);
 }

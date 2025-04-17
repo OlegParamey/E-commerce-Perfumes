@@ -23,7 +23,7 @@ function ModalProfile({ onClose }) {
 		"fixed inset-0 bg-black/50 z-50 flex justify-center items-center backdrop-blur-sm";
 	const modalWindow = `relative flex flex-col gap-y-2 w-full
 					bg-white p-4 pt-2 pr-2 shadow-lg max-h-10/11 
-					overflow-y-auto sm:mx-5 sm:px-3 md:max-w-sm 
+					overflow-y-auto sm:mx-5 sm:px-3 md:max-w-sm sm:overflow-hidden
 					transition-all duration-200 ease-out transform 
 					${isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"}`;
 
