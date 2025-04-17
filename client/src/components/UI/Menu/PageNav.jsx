@@ -2,8 +2,9 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect, useCallback, memo } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
-function PageNav({ totalItems, itemsPerPage, currentPage }) {
+function PageNav({ totalItems, itemsPerPage }) {
 	const [searchParams, setSearchParams] = useSearchParams();
+	const currentPage = Number(searchParams.get("page")) || 1;
 
 	const changePage = useCallback(
 		(page) => {
@@ -23,7 +24,6 @@ function PageNav({ totalItems, itemsPerPage, currentPage }) {
 			!searchParams.get("page");
 
 		if (shouldResetToPage1) {
-			console.log("resetPageTo1");
 			changePage(1);
 		}
 	});

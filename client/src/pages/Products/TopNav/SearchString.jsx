@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useURLInputs } from "../../../hooks/useURLInputs";
 import { useDebounce } from "../../../hooks/useDebounce";
 import IconDisabledContainer from "../../../components/UI/IconDisabledContainer";
@@ -9,10 +9,14 @@ function SearchString() {
 	 rounded-xs pl-8.5 py-1.5 pr-4 peer 
 	 overflow-ellipsis text-sm sm:text-md md:text-xl`;
 	const { setSearch, searchParams } = useURLInputs();
+
 	const [localSearch, setLocalSearch] = useState(
-		() => searchParams.get("search") || ""
+		searchParams.get("search") || ""
 	);
+
 	const debouncedSearch = useDebounce(localSearch, 1000);
+
+	const prevDebouncedSearchRef = useRef(debouncedSearch);
 
 	const handleInputChange = (event) => {
 		let value = event.target.value;
@@ -24,7 +28,22 @@ function SearchString() {
 	};
 
 	useEffect(() => {
-		setSearch("search", debouncedSearch);
+		const searchParam = searchParams.get("search") || "";
+		if (searchParam !== localSearch) {
+			setLocalSearch(searchParam);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [searchParams]);
+
+	useEffect(() => {
+		const prevDebouncedSearch = prevDebouncedSearchRef.current;
+
+		if (debouncedSearch !== prevDebouncedSearch && debouncedSearch !== "") {
+			setSearch("search", debouncedSearch);
+		} else if (debouncedSearch === "" && prevDebouncedSearch !== "") {
+			setSearch("search", "");
+		}
+		prevDebouncedSearchRef.current = debouncedSearch;
 	}, [debouncedSearch, setSearch]);
 
 	return (

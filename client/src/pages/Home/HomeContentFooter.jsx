@@ -15,7 +15,7 @@ function HomeContentFooter() {
 					will fit you the most?
 				</p>
 				<ButtonWithTextAndAction
-					onClick={() => navigate("/products")}
+					onClick={() => navigate("/products?page=1")}
 					text="yes"
 					w="w-16 md:w-32"
 					h="h-6 sm:h-10"

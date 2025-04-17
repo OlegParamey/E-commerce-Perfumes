@@ -44,17 +44,17 @@ app.get("/products", (req, res) => {
 					.includes(queryParams.search.toLowerCase())
 		);
 	}
-	setTimeout(() => {
-		res.json(result);
-	}, 5000);
+	// setTimeout(() => {
+	res.json(result);
+	// }, 5000);
 });
 
 app.get("/product/:id", (req, res) => {
 	const productId = req.params.id;
 	const product = products.find((obj) => obj.id == productId);
-	setTimeout(() => {
-		res.json(product);
-	}, 5000);
+	// setTimeout(() => {
+	res.json(product);
+	// }, 5000);
 });
 
 app.get("/filters", (req, res) => {

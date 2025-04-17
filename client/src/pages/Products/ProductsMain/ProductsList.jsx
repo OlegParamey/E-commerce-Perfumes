@@ -1,9 +1,51 @@
+import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getProductsData } from "../../../fetch/products";
 import { ProductCard } from "./ProductCard";
 import { ProductListLoading } from "./ProductListLoading.jsx";
+import URL from "../../../data/URL";
 
-function ProductsList({ productsForPage, loading }) {
+function ProductsList({
+	itemsPerPage,
+	setProducts,
+	productsForPage,
+	setProductsForPage,
+}) {
+	const [searchParams] = useSearchParams();
+	const [loading, setLoading] = useState(true);
+	const [errorMsg, setErrorMsg] = useState();
+	const currentPage = Number(searchParams.get("page")) || 1;
+	const startIndex = (currentPage - 1) * itemsPerPage;
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const data = await getProductsData(URL, searchParams);
+				setProducts(data);
+				setProductsForPage(
+					data.slice(startIndex, startIndex + itemsPerPage)
+				);
+			} catch (error) {
+				setErrorMsg(error.message);
+			} finally {
+				setLoading(false);
+			}
+		};
+
+		fetchData();
+	}, [
+		searchParams,
+		itemsPerPage,
+		startIndex,
+		setProductsForPage,
+		setProducts,
+	]);
+
 	if (loading) {
 		return <ProductListLoading />;
+	}
+	if (errorMsg) {
+		return <></>;
 	}
 	if (!productsForPage.length) {
 		return (
