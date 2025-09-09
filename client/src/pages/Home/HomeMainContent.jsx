@@ -1,7 +1,7 @@
-import ImageWithCardText from "../../components/UI/ImageWithCardText";
-import beach from "../../assets/images/UI/beach.jpg";
-import wood from "../../assets/images/UI/wood.jpg";
-import coconut from "../../assets/images/UI/coconut.jpg";
+import ImageWithCardText from '../../components/UI/ImageWithCardText';
+import beach from '../../assets/images/UI/beach.jpg';
+import wood from '../../assets/images/UI/wood.jpg';
+import coconut from '../../assets/images/UI/coconut.jpg';
 
 function HomeMainContent() {
 	return (

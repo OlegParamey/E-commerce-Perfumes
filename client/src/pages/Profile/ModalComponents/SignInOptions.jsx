@@ -14,7 +14,7 @@ export default SignInOptions;
 
 function IconWithAnimationActionContainer({ children }) {
 	return (
-		<div className="w-12 h-12 p-2 justify-items-center border bg-neutral-50 cursor-pointer">
+		<div className="w-12 h-12 p-2 justify-items-center border bg-neutral-50 cursor-pointer hover:border-2 hover:border-gray-500">
 			{children}
 		</div>
 	);

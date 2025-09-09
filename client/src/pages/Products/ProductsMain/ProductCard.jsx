@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 export function ProductCard({ item }) {
 	const cardContainerClass = `flex flex-col flex-grow justify-between items-center cursor-pointer
@@ -10,7 +10,9 @@ export function ProductCard({ item }) {
 	return (
 		<div
 			className={cardContainerClass}
-			onClick={() => navigate(`/product/${id}`, { replace: false })}
+			onClick={() =>
+				navigate(`/product/${id}?option=${capacity}`, { replace: false })
+			}
 		>
 			<img src={img} alt={brand} className="w-50 h-50 border" />
 			<h1 className="font-semibold text-base">{title}</h1>

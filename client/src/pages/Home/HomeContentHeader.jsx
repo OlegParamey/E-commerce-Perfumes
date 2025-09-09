@@ -1,4 +1,4 @@
-import man from "../../assets/images/UI/man.jpg";
+import man from '../../assets/images/UI/man.jpg';
 
 function HomeContentHeader() {
 	return (
